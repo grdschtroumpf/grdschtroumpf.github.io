@@ -1,31 +1,147 @@
-<!-- Portfolio Grid Section -->
-    <section id="speakers" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Jeux</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .speakers-item {
+        height: 350px; /* Hauteur réduite sur mobile */
+    }
+    
+    .speakers-item img {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .speakers-item {
+        height: 320px;
+    }
+    
+    .speakers-item img {
+        height: 140px;
+    }
+}<!-- Portfolio Grid Section -->
+<section id="speakers" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Jeux</h2>
+                <h3 class="section-subheading text-muted"></h3>
             </div>
-            <div class="row">
-            {% for post in site.data.twenty_17.speakers %}
-                <div class="col-md-3 col-sm-6 speakers-item">
-                    <a href="#{{ post.name }}" class="speakers-link" data-toggle="modal">
-                        <div class="speakers-hover">
-                            <div class="speakers-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+        </div>
+        <div class="row">
+        {% for post in site.data.twenty_17.speakers %}
+            <div class="col-md-3 col-sm-6 speakers-item">
+                <a href="#{{ post.name }}" class="speakers-link" data-toggle="modal">
+                    <div class="speakers-hover">
+                        <div class="speakers-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="../css/2017_style/img/speaker/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                    </a>
-                    <div class="speakers-caption">
+                    </div>
+                    <img src="../css/2017_style/img/speaker/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
+                </a>
+                <div class="speakers-caption">
+                    <div class="content-top">
                         <h4>{{ post.title }}</h4>
                         <p class="text-muted">{{ post.subtitle }}</p>
                     </div>
+                    
+                    <div class="content-bottom">
+                        <!-- Bouton de téléchargement PDF -->
+                        {% if post.pdf_file %}
+                        <a href="{{ '/assets/documents/' | append: post.pdf_file | relative_url }}" 
+                           class="btn btn-download" 
+                           target="_blank"
+                           title="Télécharger {{ post.pdf_name | default: 'le document' }}">
+                            <i class="fa fa-download"></i> {{ post.pdf_name | default: "Télécharger" }}
+                        </a>
+                        {% else %}
+                        <span class="btn btn-download btn-disabled" 
+                              title="Document non disponible">
+                            <i class="fa fa-download"></i> {{ post.pdf_name | default: "Non disponible" }}
+                        </span>
+                        {% endif %}
+                    </div>
                 </div>
-            {% endfor %}
             </div>
-         <!--    <p>Visit 2016's page.</p>-->
-         <!--    <center><a href="/2016" class="page-scroll btn btn-xl">Visit Now</a></center>-->
+        {% endfor %}
         </div>
-    </section>
+     <!--    <p>Visit 2016's page.</p>-->
+     <!--    <center><a href="/2016" class="page-scroll btn btn-xl">Visit Now</a></center>-->
+    </div>
+</section>
+
+<style>
+/* Style pour le bouton de téléchargement */
+.btn-download {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #fed136;
+    color: #222;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-download:hover {
+    background-color: #fec810;
+    color: #000;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-download i {
+    margin-right: 5px;
+}
+
+/* Style pour le bouton désactivé */
+.btn-disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+}
+
+.btn-disabled:hover {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ajustement pour les speakers-item */
+.speakers-item {
+    margin-bottom: 30px;
+    height: 400px; /* Hauteur fixe pour tous les containers */
+    display: flex;
+    flex-direction: column;
+}
+
+.speakers-item a.speakers-link {
+    flex-shrink: 0; /* L'image ne rétrécit pas */
+}
+
+.speakers-item img {
+    height: 200px; /* Hauteur fixe pour toutes les images */
+    width: 100%;
+    object-fit: cover; /* Remplit l'espace sans déformer */
+}
+
+.speakers-caption {
+    flex: 1; /* Prend l'espace restant */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 0 20px 0;
+}
+
+.speakers-caption .content-top {
+    flex-grow: 1;
+}
+
+.speakers-caption .content-bottom {
+    margin-top: auto;
+}
+</style>
