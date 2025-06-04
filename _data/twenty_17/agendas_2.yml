@@ -1,5 +1,19 @@
-- time: 8:00 AM - 12:00 PM
-  info: "<u>Title</u><br><b>Name</b><br><i>Position</i><br><br>Topic"
+- time: 7h30
+  info: "Ouverture de la salle au public"
+ 
+- time: 8h00
+  info: "Café et petit déjeuner (inclus dans l’inscription)"
+  open: "Ouverture du dépôt des figurines"
 
-- time: 12:00 PM - 3:00 PM
-  info: "<u>Title</u><br><b>Name</b><br><i>Position</i><br><br>Topic"
+- time: 8h30 - 9h00
+  info: "Début de la ronde 1 (à préciser en fonction du tournoi)"
+  
+- time: 13h00 - 13h30
+  info: "Début de la ronde 2 (à préciser en fonction du tournoi)"
+  
+- time: 17h00 - 17h30
+  info: "Début de la ronde 3 (à préciser en fonction du tournoi)"
+  
+- time: 7h30
+  info: "Fermeture de la salle au public"
+  
