@@ -1,39 +1,4 @@
-/* Responsive */
-@media screen and (max-width: 768px) {
-    .speakers-item {
-        height: 350px; /* Hauteur réduite sur mobile */
-    }
-    
-    .speakers-item img {
-        height: 130px;
-    }
-    
-    .speakers-item a.speakers-link {
-        padding: 10px;
-    }
-    
-    .speakers-caption {
-        padding: 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .speakers-item {
-        height: 320px;
-    }
-    
-    .speakers-item img {
-        height: 110px;
-    }
-    
-    .speakers-item a.speakers-link {
-        padding: 8px;
-    }
-    
-    .speakers-caption {
-        padding: 8px;
-    }
-}<!-- Portfolio Grid Section -->
+<!-- Portfolio Grid Section -->
 <section id="speakers" class="bg-light-gray">
     <div class="container">
         <div class="row">
@@ -45,14 +10,9 @@
         <div class="row">
         {% for post in site.data.twenty_17.speakers %}
             <div class="col-md-3 col-sm-6 speakers-item">
-                <a href="#{{ post.name }}" class="speakers-link" data-toggle="modal">
-                    <div class="speakers-hover">
-                        <div class="speakers-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
+                <div class="speakers-image">
                     <img src="../css/2017_style/img/speaker/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
-                </a>
+                </div>
                 <div class="speakers-caption">
                     <div class="content-top">
                         <h4>{{ post.title }}</h4>
@@ -135,11 +95,11 @@
     flex-direction: column;
 }
 
-.speakers-item a.speakers-link {
+.speakers-item .speakers-image {
     flex-shrink: 0; /* L'image ne rétrécit pas */
     background-color: white; /* Fond blanc pour l'image */
     padding: 15px; /* Espacement autour de l'image */
-    border-radius: 8px; /* Coins arrondis optionnels */
+  /*  border-radius: 8px;  Coins arrondis optionnels */
 }
 
 .speakers-item img {
@@ -155,8 +115,8 @@
     justify-content: space-between;
     padding: 15px 0 20px 0;
     background-color: white; /* Fond blanc pour le texte */
-    margin-top: 10px; /* Espace entre image et texte */
-    border-radius: 8px; /* Coins arrondis optionnels */
+    margin-top: 0px; /* Espace entre image et texte */
+   /*border-radius: 8px;  Coins arrondis optionnels */
     padding: 15px; /* Espacement intérieur */
 }
 
