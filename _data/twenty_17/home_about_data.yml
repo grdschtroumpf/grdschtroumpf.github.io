@@ -25,7 +25,7 @@
 - inverted: 
   img: icon-faq.jpeg
   name: FAQs
-  info: Des questions simple ? Pour le reste ca sera par email.
+  info: Des questions simples ? Pour le reste ca sera par email.
   link: /faqs
 
 #- inverted: timeline-inverted
