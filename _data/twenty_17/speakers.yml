@@ -11,8 +11,8 @@
 - title: description
   name: The Old World
   subtitle: sous titre
-  img: tow.jpg
-  thumbnail: tow.jpg
+  img: tow.png
+  thumbnail: tow.png
   alt: Picture of TBD
   topic: 
   description: 
@@ -31,8 +31,8 @@
   - title: description
   name: Infinity
   subtitle: sous titre
-  img: infinity.jpg
-  thumbnail: infinity.jpg
+  img: infinity.png
+  thumbnail: infinity.png
   alt: Picture of TBD
   topic: 
   description: 
