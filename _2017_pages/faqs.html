@@ -4,24 +4,44 @@ permalink: /faqs
 title: Frequently Asked Questions (FAQ)
 published: true
 ---
-    <!--background color-->
-    <script type="text/javascript">
-        document.write ('<body style="background: Gainsboro; background-attachment: fixed;">')
-    </script>
+<!--background color-->
+<script type="text/javascript">
+    document.write ('<body style="background: Gainsboro; background-attachment: fixed;">')
+</script>
 
-    <div class="event black-frame">
-      <h1 class="title">FAQ</h1>
+<div class="event black-frame">
+    <h1 class="title">FAQ</h1>
+    <p>Ci-dessous une liste de questions & réponses qui pourront vous être utiles. Si il n'y a rien c'est qu'on a pas encore rempli cette section ou que vous n'avez pas encore posé la question !</p>
+    
+    <ol>
+        {% for faq in site.data.twenty_17.faqs %}
+            <li><b>{{ faq.question }}</b>
+                <br>{{ faq.answer }}<br><br>
+            </li>
+        {% endfor %}
+    </ol>
+    
+    <p>
+        Si vous ne trouvez pas votre bonheur ici, n'hésitez pas à le chercher dans 
+        <a href="{{ '/' | relative_url }}#contact">Nous contacter</a>.
+    </p>
+</div>
 
-      <p>Ci-dessous une liste de questions & réponses qui pourront vous être utiles. Si il n'y a rien c'est qu'on a pas encore rempli cette section ou que vous n'avez pas encore posé la question ! <p>
-        <ol>
-            {% for faq in site.data.twenty_17.faqs %}
-                <li><b>{{ faq.question }}</b>
-                    <br>{{ faq.answer }}<br><br>
-                </li>
-            {% endfor %}
-        </ol>
-        <p>
-            Si vous ne trouvez pas votre bonheur ici, n'hésitez pas à le chercher dans <a href="#contact">Nous contacter</a>.
-        
-        </p>
-    </div>
+<style>
+/* Style pour le scroll fluide */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Style pour le lien contact */
+.event.black-frame a {
+    color: #fed136;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.event.black-frame a:hover {
+    color: #fec810;
+    text-decoration: none;
+}
+</style>
