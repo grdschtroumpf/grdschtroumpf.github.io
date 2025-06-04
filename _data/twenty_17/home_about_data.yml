@@ -7,7 +7,7 @@
 - inverted: 
   img: icon-agenda.jpeg
   name: Agenda
-  info: Déroulement du week-end.
+  info: Déroulement du week-end ?
   link: /agenda
 
 #- inverted: 
@@ -18,14 +18,14 @@
 
 - inverted: timeline-inverted
   img: icon-venue.jpeg
-  name: Venue
-  info: Comment venir.
+  name: Accés
+  info: Comment arriver à bon port ?
   link: /venue
 
 - inverted: 
   img: icon-faq.jpeg
   name: FAQs
-  info: Des questions ? On essaye d'y répondre ici.
+  info: Des questions simple ? Pour le reste ca sera par email.
   link: /faqs
 
 #- inverted: timeline-inverted
