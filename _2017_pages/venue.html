@@ -4,24 +4,77 @@ permalink: /venue
 title: Venue
 published: true
 ---
-    <!--background color-->
-    <script type="text/javascript">
-        document.write ('<body style="background: Gainsboro; background-attachment: fixed;">')
-    </script>
+<!--background color-->
+<script type="text/javascript">
+    document.write ('<body style="background: Gainsboro; background-attachment: fixed;">')
+</script>
 
-    <div class="event black-frame">
-      <p>Addresse : Salle Fabrique Normant, 2 Av. François Mitterrand, 41200 Romorantin-Lanthenay </p>
-     <!-- Section avec les images -->
-        <div class="venue-images">
-            <div class="image-container">
-                <img src="../css/2017_style/img/cartereaseauromo.png" alt="Transports en commun" class="venue-img" >
-                <p class="image-caption">Transports en commun</p>
-            </div>
-            <div class="image-container">
-                <img src="../css/2017_style/img/planparking.png" alt="Parkings à proximité" class="venue-img" >
-                <p class="image-caption">Parkings à proximité</p>
-            </div>
+<div class="event black-frame">
+    <p>Adresse : Salle Fabrique Normant, 2 Av. François Mitterrand, 41200 Romorantin-Lanthenay</p>
+    
+    <!-- Section avec les images -->
+    <div class="venue-images">
+        <div class="image-container">
+            <a href="https://mmt.vsct.fr/sites/default/files/swt/CCVL/2023-10/80x120_CARTE-REGIONALE-2022_agrandi3_NewCharte2.pdf" target="_blank">
+                <img src="../css/2017_style/img/cartereaseauromo.png" alt="Transports en commun" class="venue-img">
+            </a>
+            <p class="image-caption">Transports en commun (cliquez pour plus d'infos)</p>
         </div>
-         
+        <div class="image-container">
+            <a href="https://www.lafabriquenormant.fr/wp-content/uploads/2018/11/plan.exte%CC%81rieur.pdf" target="_blank">
+                <img src="../css/2017_style/img/planparking.png" alt="Parkings à proximité" class="venue-img">
+            </a>
+            <p class="image-caption">Parkings à proximité (cliquez pour plus d'infos)</p>
+        </div>
     </div>
+</div>
 
+<style>
+.venue-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.image-container {
+    max-width: 300px; /* Taille réduite */
+    width: 100%;
+    text-align: center;
+}
+
+.venue-img {
+    width: 100%;
+    height: 150px; /* Hauteur réduite */
+    object-fit: contain; /* Garde les proportions sans couper */
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.venue-img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.image-caption {
+    margin-top: 8px;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .image-container {
+        max-width: 250px;
+    }
+    
+    .venue-img {
+        height: 120px;
+    }
+}
+</style>
