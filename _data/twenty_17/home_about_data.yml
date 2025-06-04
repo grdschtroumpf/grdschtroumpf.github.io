@@ -4,7 +4,7 @@
   #info: Read more about our Theme, Vision, and Mission
   #link: /about
 
-- inverted: timeline-inverted
+- inverted: 
   img: icon-agenda.jpeg
   name: Agenda
   info: Déroulement du week-end.
