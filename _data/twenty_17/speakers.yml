@@ -7,6 +7,8 @@
   topic: 
   description: 
   website : TBD
+  pdf_file: "INTER REGIONS 2024 - REGLEMENT V4.docx"
+  pdf_name: "Règlement 2024"
 
 - title: description
   name: The Old World
@@ -17,6 +19,8 @@
   topic: 
   description: 
   website : TBD
+  #pdf_file: "regles-jeu1.pdf"
+  pdf_name: "Bientôt disponible"
 
 - title: description
   name: Middle earth
@@ -27,6 +31,8 @@
   topic: 
   description: 
   website : TBD
+  #pdf_file: "regles-jeu1.pdf"
+  pdf_name: "Bientôt disponible"
 
 - title: description
   name: Infinity
@@ -37,3 +43,5 @@
   topic: 
   description: 
   website : TBD
+  #pdf_file: "regles-jeu1.pdf"
+  pdf_name: "Bientôt disponible"
