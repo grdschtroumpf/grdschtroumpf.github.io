@@ -5,7 +5,15 @@
     }
     
     .speakers-item img {
-        height: 160px;
+        height: 130px;
+    }
+    
+    .speakers-item a.speakers-link {
+        padding: 10px;
+    }
+    
+    .speakers-caption {
+        padding: 10px;
     }
 }
 
@@ -15,7 +23,15 @@
     }
     
     .speakers-item img {
-        height: 140px;
+        height: 110px;
+    }
+    
+    .speakers-item a.speakers-link {
+        padding: 8px;
+    }
+    
+    .speakers-caption {
+        padding: 8px;
     }
 }<!-- Portfolio Grid Section -->
 <section id="speakers" class="bg-light-gray">
@@ -121,12 +137,15 @@
 
 .speakers-item a.speakers-link {
     flex-shrink: 0; /* L'image ne rétrécit pas */
+    background-color: white; /* Fond blanc pour l'image */
+    padding: 15px; /* Espacement autour de l'image */
+    border-radius: 8px; /* Coins arrondis optionnels */
 }
 
 .speakers-item img {
-    height: 200px; /* Hauteur fixe pour toutes les images */
+    height: 170px; /* Hauteur réduite pour compenser le padding */
     width: 100%;
-    object-fit: cover; /* Remplit l'espace sans déformer */
+    object-fit: contain; /* Garde les proportions sans couper */
 }
 
 .speakers-caption {
@@ -135,6 +154,10 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 15px 0 20px 0;
+    background-color: white; /* Fond blanc pour le texte */
+    margin-top: 10px; /* Espace entre image et texte */
+    border-radius: 8px; /* Coins arrondis optionnels */
+    padding: 15px; /* Espacement intérieur */
 }
 
 .speakers-caption .content-top {
