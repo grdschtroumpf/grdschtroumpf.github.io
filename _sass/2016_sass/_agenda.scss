@@ -11,10 +11,10 @@
   }
   /* Column widths are based on these cells */
   .agenda-time {
-    width: 30%;
+    width: 15%;
   }
   .agenda-activity {
-     width: 40%;
+     width: 55%;
   }
   .agenda-open {
      width: 30%;
@@ -48,10 +48,10 @@
 @media screen and (max-width: 760px){
     .agenda {
         .agenda-time {
-            width: 30%;
+            width: 15%;
         }
         .agenda-activity {
-            width: 40%;
+            width: 55%;
         }
         .agenda-open {
             width: 30%;
