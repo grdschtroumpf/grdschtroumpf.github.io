@@ -1,26 +1,39 @@
-- title: Name
-  name: Name-1
-  subtitle: Position
-  img: TBD.jpg
-  thumbnail: TBD.jpg
+- title: description
+  name: 9ème Age
+  subtitle: sous titre
+  img: 9age.jpg
+  thumbnail: 9age.jpg
   alt: Picture of TBD
-  topic: Topic
-  description: More Info
+  topic: 
+  description: 
+  website : TBD
 
-- title: Name
-  name: Name-2
-  subtitle: Position
-  img: TBD.jpg
-  thumbnail: TBD.jpg
+- title: description
+  name: The Old World
+  subtitle: sous titre
+  img: tow.jpg
+  thumbnail: tow.jpg
   alt: Picture of TBD
-  topic: Topic
-  description: More Info
+  topic: 
+  description: 
+  website : TBD
 
-- title: Name
-  name: Name-3
-  subtitle: Position
-  img: TBD.jpg
-  thumbnail: TBD.jpg
+- title: description
+  name: Middle earth
+  subtitle: sous titre
+  img: mesbg.jpg
+  thumbnail: mesbg.jpg
   alt: Picture of TBD
-  topic: Topic
-  description: More Info
+  topic: 
+  description: 
+  website : TBD
+
+  - title: description
+  name: Infinity
+  subtitle: sous titre
+  img: infinity.jpg
+  thumbnail: infinity.jpg
+  alt: Picture of TBD
+  topic: 
+  description: 
+  website : TBD
