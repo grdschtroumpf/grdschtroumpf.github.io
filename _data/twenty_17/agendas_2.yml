@@ -1,19 +1,26 @@
 - time: 7h30
-  info: "Ouverture de la salle au public"
+  info: "Ouverture de la salle au public<br>"
  
 - time: 8h00
-  info: "Café et petit déjeuner (inclus dans l’inscription)"
-  open: "Ouverture du dépôt des figurines"
+  info: "Café et petit déjeuner (inclus dans l’inscription)<br>"
+  open: "Ouverture du dépôt des figurines<br>"
 
 - time: 8h30 - 9h00
-  info: "Début de la ronde 1 (à préciser en fonction du tournoi)"
+  info: "Début de la ronde 1 (à préciser en fonction du tournoi)<br>"
+
+- time: 11h30 - 13h30
+  info: "Pause déjeuner<br>repas inclus dans les inscriptions des tournois de jeu<br>à préciser en fonction du tournoi"
   
 - time: 13h00 - 13h30
-  info: "Début de la ronde 2 (à préciser en fonction du tournoi)"
+  info: "Début de la ronde 2 (à préciser en fonction du tournoi)<br>Concours de speed painting & Quizz pour les équipes T9A en 4 rondes<br>"
   
+- time: 16h00
+  info: ""
+  open: "Fermeture du dépôt des figurines<br>"
+
 - time: 17h00 - 17h30
-  info: "Début de la ronde 3 (à préciser en fonction du tournoi)"
+  info: "Début de la ronde 3 (à préciser en fonction du tournoi)<br>"
   
-- time: 7h30
-  info: "Fermeture de la salle au public"
+- time: 21h00
+  info: "Fermeture de la salle au public<br>"
   
