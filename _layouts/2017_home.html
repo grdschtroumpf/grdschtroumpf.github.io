@@ -54,27 +54,19 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* General styling */
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0;
-            background-color: #f0f0f0; /* Light gray background for contrast */
-            font-family: Arial, sans-serif;
-        }
-
+        /* Remove problematic body styling that interferes with background image */
         .container {
             text-align: center;
         }
 
         /* Flip clock container */
         .flip-clock-container {
-            background-color: #ffffff; /* White background for the entire countdown */
+            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for better visibility */
             display: inline-block;
+            margin: 20px auto;
         }
 
         /* Countdown title */
