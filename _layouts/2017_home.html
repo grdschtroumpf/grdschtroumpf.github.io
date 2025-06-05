@@ -54,34 +54,50 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Remove problematic body styling that interferes with background image */
+        /* Préserver les styles existants du body pour le header */
+        body#page-top.index {
+            /* Ne pas override les styles existants du body */
+        }
+        
         .container {
             text-align: center;
         }
+        
+        /* S'assurer que le header reste visible */
+        header {
+            position: relative;
+            z-index: 10;
+        }
 
-        /* Flip clock container */
+        /* Flip clock container - styles spécifiques au countdown */
         .flip-clock-container {
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow for better visibility */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+            backdrop-filter: blur(10px);
+            padding: 30px 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             display: inline-block;
             margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 5; /* S'assurer que le countdown reste au-dessus du background */
         }
 
         /* Countdown title */
         .countdown-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2f2f2f; /* Smoky black / anthracite gray */
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         /* Flip clock */
         .flip-clock {
             display: flex;
             justify-content: center;
-            gap: 5%;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         /* Individual digit container */
@@ -89,66 +105,129 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 0 5px;
         }
 
         /* Individual digit styling */
         .digit {
             position: relative;
-            width: 15vw; /* Responsive width: 15% of the viewport width */
-            height: 20vw; /* Responsive height: 20% of the viewport width */
-            max-width: 80px; /* Maximum size for larger screens */
-            max-height: 100px; /* Maximum size for larger screens */
-            background-color: #ffffff; /* White background */
-            color: #2f2f2f; /* Smoky black / anthracite gray for text */
-            font-size: 4vw; /* Responsive font size */
-            font-weight: bold;
+            width: 16vw;
+            height: 16vw;
+            max-width: 85px;
+            max-height: 85px;
+            min-width: 60px;
+            min-height: 60px;
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            color: #1a1a1a;
+            font-size: 4.2vw;
+            max-font-size: 2.2rem;
+            min-font-size: 1.5rem;
+            font-weight: 700;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            border-radius: 15px;
+            box-shadow: 
+                0 4px 15px rgba(0, 0, 0, 0.15),
+                inset 0 1px 3px rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .digit:hover {
+            transform: translateY(-2px);
         }
 
         /* Label styling */
         .label {
-            width: 100%; /* Match the width of the digit */
-            background-color: #ffffff; /* White background */
+            margin-top: 8px;
+            padding: 6px 12px;
+            background: rgba(26, 26, 26, 0.9);
+            color: #ffffff;
             text-align: center;
-            margin-top: -5px; /* Slight overlap with the digit */
-            font-size: 1rem;
-            font-weight: bold;
-            color: #2f2f2f; /* Smoky black / anthracite gray */
-            border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            min-width: 70px;
         }
 
         /* Separator styling (colon) */
         .separator {
-            font-size: 4vw; /* Responsive font size */
-            font-weight: bold;
-            color: #2f2f2f; /* Smoky black / anthracite gray */
+            font-size: 3.5vw;
+            font-weight: 700;
+            color: #1a1a1a;
             display: flex;
             align-items: center;
+            height: 16vw;
+            max-height: 85px;
+            min-height: 60px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Media query for smaller screens */
-        @media (max-width: 600px) {
+        /* Media queries pour responsive */
+        @media (max-width: 768px) {
+            .flip-clock-container {
+                padding: 25px 20px;
+                margin: 15px 10px;
+            }
+            
             .digit {
-                width: 20vw; /* Slightly larger digits for small screens */
-                height: 25vw;
-                font-size: 5vw; /* Adjust font size */
+                width: 18vw;
+                height: 18vw;
+                font-size: 4.5vw;
             }
-
-            .label {
-                font-size: 0.9rem; /* Adjust label size */
-            }
-
+            
             .separator {
-                font-size: 5vw; /* Adjust separator size */
+                font-size: 4vw;
+                height: 18vw;
             }
-
+            
+            .label {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+                min-width: 60px;
+            }
+            
             .countdown-title {
-                font-size: 1rem; /* Adjust title size */
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flip-clock {
+                gap: 4px;
+            }
+            
+            .digit-container {
+                margin: 0 2px;
+            }
+            
+            .digit {
+                width: 20vw;
+                height: 20vw;
+                font-size: 5vw;
+                border-radius: 12px;
+            }
+            
+            .separator {
+                font-size: 4.5vw;
+                height: 20vw;
+            }
+            
+            .label {
+                font-size: 0.7rem;
+                padding: 3px 6px;
+                margin-top: 6px;
+                min-width: 50px;
+            }
+            
+            .countdown-title {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -182,8 +261,8 @@
         }
 
         // Update the countdown every second
-        setInterval(updateCountdown, 1000); // Update every second
-        updateCountdown(); // Initial call to display the countdown immediately
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 
   </body>
