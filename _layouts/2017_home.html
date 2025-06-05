@@ -54,23 +54,11 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Préserver les styles existants du body pour le header */
-        body#page-top.index {
-            /* Ne pas override les styles existants du body */
-        }
+        /* Préserver tous les styles Bootstrap existants */
+        /* Ne pas toucher aux styles du body, navbar, etc. */
         
-        .container {
-            text-align: center;
-        }
-        
-        /* S'assurer que le header reste visible */
-        header {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Flip clock container - styles spécifiques au countdown */
-        .flip-clock-container {
+        /* Styles spécifiques uniquement pour le countdown */
+        .intro-text .flip-clock-container {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
             backdrop-filter: blur(10px);
             padding: 30px 25px;
@@ -80,11 +68,10 @@
             margin: 20px auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
             position: relative;
-            z-index: 5; /* S'assurer que le countdown reste au-dessus du background */
         }
 
         /* Countdown title */
-        .countdown-title {
+        .intro-text .countdown-title {
             font-size: 1.4rem;
             font-weight: 600;
             color: #1a1a1a;
@@ -93,7 +80,7 @@
         }
 
         /* Flip clock */
-        .flip-clock {
+        .intro-text .flip-clock {
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -101,7 +88,7 @@
         }
 
         /* Individual digit container */
-        .digit-container {
+        .intro-text .digit-container {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -109,7 +96,7 @@
         }
 
         /* Individual digit styling */
-        .digit {
+        .intro-text .digit {
             position: relative;
             width: 16vw;
             height: 16vw;
@@ -134,12 +121,12 @@
             transition: transform 0.2s ease;
         }
 
-        .digit:hover {
+        .intro-text .digit:hover {
             transform: translateY(-2px);
         }
 
         /* Label styling */
-        .label {
+        .intro-text .label {
             margin-top: 8px;
             padding: 6px 12px;
             background: rgba(26, 26, 26, 0.9);
@@ -156,7 +143,7 @@
         }
 
         /* Separator styling (colon) */
-        .separator {
+        .intro-text .separator {
             font-size: 3.5vw;
             font-weight: 700;
             color: #1a1a1a;
@@ -170,62 +157,62 @@
 
         /* Media queries pour responsive */
         @media (max-width: 768px) {
-            .flip-clock-container {
+            .intro-text .flip-clock-container {
                 padding: 25px 20px;
                 margin: 15px 10px;
             }
             
-            .digit {
+            .intro-text .digit {
                 width: 18vw;
                 height: 18vw;
                 font-size: 4.5vw;
             }
             
-            .separator {
+            .intro-text .separator {
                 font-size: 4vw;
                 height: 18vw;
             }
             
-            .label {
+            .intro-text .label {
                 font-size: 0.75rem;
                 padding: 4px 8px;
                 min-width: 60px;
             }
             
-            .countdown-title {
+            .intro-text .countdown-title {
                 font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .flip-clock {
+            .intro-text .flip-clock {
                 gap: 4px;
             }
             
-            .digit-container {
+            .intro-text .digit-container {
                 margin: 0 2px;
             }
             
-            .digit {
+            .intro-text .digit {
                 width: 20vw;
                 height: 20vw;
                 font-size: 5vw;
                 border-radius: 12px;
             }
             
-            .separator {
+            .intro-text .separator {
                 font-size: 4.5vw;
                 height: 20vw;
             }
             
-            .label {
+            .intro-text .label {
                 font-size: 0.7rem;
                 padding: 3px 6px;
                 margin-top: 6px;
                 min-width: 50px;
             }
             
-            .countdown-title {
+            .intro-text .countdown-title {
                 font-size: 1.1rem;
                 margin-bottom: 15px;
             }
