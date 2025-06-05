@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Flip Clock</title>
+    <style>
+        /* General styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Light gray background for contrast */
+            font-family: Arial, sans-serif;
+        }
 
-  {% include 2017_data/head.html %}
+        /* Flip clock container */
+        .flip-clock {
+            display: flex;
+            gap: 10px;
+        }
 
-  <body id="page-top" class="index">
+        /* Individual digit styling */
+        .digit {
+            position: relative;
+            width: 80px;
+            height: 120px;
+            background-color: #ffffff; /* White background */
+            color: #2f2f2f; /* Smoky black / anthracite gray for text */
+            font-size: 4rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
 
-    {% include 2017_data/header-home.html %}
+        /* Separator styling (colon) */
+        .separator {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #2f2f2f; /* Smoky black / anthracite gray */
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Flip Clock Countdown -->
+    <div class="flip-clock">
+        <div class="digit" id="days">00</div>
+        <div class="separator">:</div>
+        <div class="digit" id="hours">00</div>
+    </div>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-heading"><strong>Interjeux de Romorantin</strong><br></div>
-                <!-- Countdown Timer -->
-                <div id="countdown" style="font-size: 1.5rem; font-weight: bold; margin-top: 20px; color: #333;"></div>
-            </div>
-        </div>
-    </header>
-
-    {% include 2017_data/intro.html %}
-    {% include 2017_data/speakers.html %}
-    {% include 2017_data/about.html %}
-    {% include 2017_data/sponsors.html %}
-    {% include 2017_data/contact.html %}
-    {% include 2017_data/footer.html %}
-    {% include 2017_data/speakers_info.html %}
-    {% include 2017_data/js.html %}
-
-    <!-- Countdown Script -->
     <script>
         // Set the event date (Year, Month - 1 (0-indexed), Day, Hour, Minute, Second)
-        const eventDate = new Date(2025, 9, 11, 7, 30, 0); // samedi October 11, 2025 7h30
+        const eventDate = new Date(2025, 9, 11, 0, 0, 0); // October 11, 2025
 
         function updateCountdown() {
             const now = new Date();
@@ -40,10 +68,13 @@
                 const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-                document.getElementById("countdown").innerHTML = 
-                    `L'événement commence dans ${days} jours et ${hours} heures.`;
+                // Update the flip clock digits
+                document.getElementById("days").textContent = days.toString().padStart(2, "0");
+                document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
             } else {
-                document.getElementById("countdown").innerHTML = "L'événement a commencé ou est terminé !";
+                // If the event has started or ended
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
             }
         }
 
@@ -51,6 +82,5 @@
         setInterval(updateCountdown, 3600000); // Update every 1 hour (3600000 ms)
         updateCountdown(); // Initial call to display the countdown immediately
     </script>
-
-  </body>
+</body>
 </html>
