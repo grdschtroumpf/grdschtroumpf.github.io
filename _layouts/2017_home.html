@@ -11,35 +11,37 @@
                 <div class="intro-heading">
                     <strong>Interjeux de Romorantin</strong><br>
                 </div>
-                
-                <!-- Countdown Timer -->
-                <div class="flip-clock-container">
-                    <div class="countdown-title">Le café est servi dans :</div>
-                    <div class="flip-clock">
-                        <div class="digit-container">
-                            <div class="digit" id="days">00</div>
-                            <div class="label">Jours</div>
-                        </div>
-                        <div class="separator">:</div>
-                        <div class="digit-container">
-                            <div class="digit" id="hours">00</div>
-                            <div class="label">Heures</div>
-                        </div>
-                        <div class="separator">:</div>
-                        <div class="digit-container">
-                            <div class="digit" id="minutes">00</div>
-                            <div class="label">Minutes</div>
-                        </div>
-                        <div class="separator">:</div>
-                        <div class="digit-container">
-                            <div class="digit" id="seconds">00</div>
-                            <div class="label">Secondes</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
+    
+    <!-- Countdown Timer - Floating independently -->
+    <div class="countdown-overlay">
+        <div class="flip-clock-container">
+            <div class="countdown-title">Le café est servi dans :</div>
+            <div class="flip-clock">
+                <div class="digit-container">
+                    <div class="digit" id="days">00</div>
+                    <div class="label">Jours</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="digit-container">
+                    <div class="digit" id="hours">00</div>
+                    <div class="label">Heures</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="digit-container">
+                    <div class="digit" id="minutes">00</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="separator">:</div>
+                <div class="digit-container">
+                    <div class="digit" id="seconds">00</div>
+                    <div class="label">Secondes</div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     {% include 2017_data/intro.html %}
     {% include 2017_data/speakers.html %}
@@ -51,7 +53,17 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Styles uniquement pour le countdown - sans toucher à la navbar */
+        /* Countdown flottant - indépendant de tous les containers */
+        .countdown-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            text-align: center;
+            pointer-events: none; /* Permet de cliquer à travers si nécessaire */
+        }
+        
         .flip-clock-container {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
             backdrop-filter: blur(10px);
@@ -59,8 +71,8 @@
             border-radius: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
             display: inline-block;
-            margin: 20px auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            pointer-events: auto; /* Le countdown lui-même peut être interactif */
         }
 
         .countdown-title {
