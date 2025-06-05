@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown Flip Clock</title>
+<html>
+
+  {% include 2017_data/head.html %}
+
+  <body id="page-top" class="index">
+
+    {% include 2017_data/header-home.html %}
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <!-- Title -->
+                <div class="intro-heading">
+                    <strong>Interjeux de Romorantin</strong><br>
+                </div>
+                <!-- Countdown Timer -->
+                <div class="flip-clock">
+                    <div class="digit" id="days">00</div>
+                    <div class="separator">:</div>
+                    <div class="digit" id="hours">00</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% include 2017_data/intro.html %}
+    {% include 2017_data/speakers.html %}
+    {% include 2017_data/about.html %}
+    {% include 2017_data/sponsors.html %}
+    {% include 2017_data/contact.html %}
+    {% include 2017_data/footer.html %}
+    {% include 2017_data/speakers_info.html %}
+    {% include 2017_data/js.html %}
+
     <style>
         /* General styling */
         body {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             margin: 0;
             background-color: #f0f0f0; /* Light gray background for contrast */
             font-family: Arial, sans-serif;
         }
 
+        .container {
+            text-align: center;
+        }
+
         /* Flip clock container */
         .flip-clock {
             display: flex;
+            justify-content: center;
             gap: 5%;
+            margin-top: 20px;
         }
 
         /* Individual digit styling */
@@ -62,14 +97,6 @@
             }
         }
     </style>
-</head>
-<body>
-    <!-- Flip Clock Countdown -->
-    <div class="flip-clock">
-        <div class="digit" id="days">00</div>
-        <div class="separator">:</div>
-        <div class="digit" id="hours">00</div>
-    </div>
 
     <script>
         // Set the event date (Year, Month - 1 (0-indexed), Day, Hour, Minute, Second)
@@ -97,5 +124,6 @@
         setInterval(updateCountdown, 3600000); // Update every 1 hour (3600000 ms)
         updateCountdown(); // Initial call to display the countdown immediately
     </script>
-</body>
+
+  </body>
 </html>
