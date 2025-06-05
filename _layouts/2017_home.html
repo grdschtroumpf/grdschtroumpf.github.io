@@ -14,13 +14,7 @@
                 
                 <!-- Simple Countdown Text -->
                 <div class="countdown-simple">
-                    <p>Le café est servi dans :</p>
-                    <div class="countdown-text">
-                        <span id="days">00</span> jours : 
-                        <span id="hours">00</span> heures : 
-                        <span id="minutes">00</span> minutes : 
-                        <span id="seconds">00</span> secondes
-                    </div>
+                    <p>Le café sera servi dans <span id="days">00</span> jours, <span id="hours">00</span> heures, <span id="minutes">00</span> minutes et <span id="seconds">00</span> secondes.</p>
                 </div>
             </div>
         </div>
@@ -36,7 +30,7 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Countdown simple et sobre */
+        /* Countdown ultra simple intégré */
         .countdown-simple {
             margin-top: 30px;
             text-align: center;
@@ -44,46 +38,24 @@
         
         .countdown-simple p {
             color: white;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            font-weight: 400;
         }
         
-        .countdown-text {
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 1.4rem;
+        .countdown-simple span {
             font-weight: 600;
-            display: inline-block;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .countdown-text span {
-            font-weight: 700;
-            color: #fff;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .countdown-text {
-                font-size: 1.2rem;
-                padding: 12px 20px;
-            }
-            
             .countdown-simple p {
                 font-size: 1.1rem;
             }
         }
         
         @media (max-width: 480px) {
-            .countdown-text {
-                font-size: 1rem;
-                padding: 10px 15px;
-            }
-            
             .countdown-simple p {
                 font-size: 1rem;
             }
