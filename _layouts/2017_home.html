@@ -19,17 +19,19 @@
         /* Flip clock container */
         .flip-clock {
             display: flex;
-            gap: 10px;
+            gap: 5%;
         }
 
         /* Individual digit styling */
         .digit {
             position: relative;
-            width: 80px;
-            height: 120px;
+            width: 20vw; /* Responsive width: 20% of the viewport width */
+            height: 30vw; /* Responsive height: 30% of the viewport width */
+            max-width: 80px; /* Maximum size for larger screens */
+            max-height: 120px; /* Maximum size for larger screens */
             background-color: #ffffff; /* White background */
             color: #2f2f2f; /* Smoky black / anthracite gray for text */
-            font-size: 4rem;
+            font-size: 4vw; /* Responsive font size */
             font-weight: bold;
             display: flex;
             justify-content: center;
@@ -40,11 +42,24 @@
 
         /* Separator styling (colon) */
         .separator {
-            font-size: 4rem;
+            font-size: 4vw; /* Responsive font size */
             font-weight: bold;
             color: #2f2f2f; /* Smoky black / anthracite gray */
             display: flex;
             align-items: center;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 600px) {
+            .digit {
+                width: 25vw; /* Slightly larger digits for small screens */
+                height: 35vw;
+                font-size: 5vw; /* Adjust font size */
+            }
+
+            .separator {
+                font-size: 5vw; /* Adjust separator size */
+            }
         }
     </style>
 </head>
