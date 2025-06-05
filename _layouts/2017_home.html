@@ -17,9 +17,15 @@
                 </div>
                 <!-- Countdown Timer -->
                 <div class="flip-clock">
-                    <div class="digit" id="days">00</div>
+                    <div class="digit-container">
+                        <div class="digit" id="days">00</div>
+                        <div class="label">Jours</div>
+                    </div>
                     <div class="separator">:</div>
-                    <div class="digit" id="hours">00</div>
+                    <div class="digit-container">
+                        <div class="digit" id="hours">00</div>
+                        <div class="label">Heures</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,6 +63,13 @@
             margin-top: 20px;
         }
 
+        /* Individual digit container */
+        .digit-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         /* Individual digit styling */
         .digit {
             position: relative;
@@ -73,6 +86,14 @@
             align-items: center;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        /* Label styling */
+        .label {
+            margin-top: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2f2f2f; /* Smoky black / anthracite gray */
         }
 
         /* Separator styling (colon) */
@@ -95,12 +116,16 @@
             .separator {
                 font-size: 5vw; /* Adjust separator size */
             }
+
+            .label {
+                font-size: 1rem; /* Adjust label size */
+            }
         }
     </style>
 
     <script>
         // Set the event date (Year, Month - 1 (0-indexed), Day, Hour, Minute, Second)
-        const eventDate = new Date(2025, 9, 11, 0, 0, 0); // October 11, 2025
+        const eventDate = new Date(2025, 9, 11, 7, 0, 0); // October 11, 2025
 
         function updateCountdown() {
             const now = new Date();
