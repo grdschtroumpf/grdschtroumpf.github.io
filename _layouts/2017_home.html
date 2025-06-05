@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
-
   {% include 2017_data/head.html %}
-
-  <body id="page-top" class="index">
-
+    <body id="page-top" class="index">
     {% include 2017_data/header-home.html %}
-
+    
     <!-- Header -->
     <header>
         <div class="container">
             <div class="intro-text">
-                <!-- Title -->
                 <div class="intro-heading">
                     <strong>Interjeux de Romorantin</strong><br>
                 </div>
+                
                 <!-- Countdown Timer -->
                 <div class="flip-clock-container">
                     <div class="countdown-title">Le café est servi dans :</div>
@@ -43,7 +40,7 @@
             </div>
         </div>
     </header>
-
+    
     {% include 2017_data/intro.html %}
     {% include 2017_data/speakers.html %}
     {% include 2017_data/about.html %}
@@ -54,62 +51,8 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* FIX IMPORTANT : Padding pour navbar fixed-top Bootstrap */
-        body.index {
-            padding-top: 70px; /* Ajustez selon la hauteur de votre navbar */
-        }
-        
-        /* Alternative si le padding-top ne fonctionne pas */
-        body#page-top.index {
-            padding-top: 70px !important;
-        }
-        
-        /* Fix pour navbar-inverse qui ne fonctionne pas */
-        .navbar-inverse {
-            background-color: #222 !important;
-            border-color: #080808 !important;
-        }
-
-        .navbar-inverse .navbar-brand {
-            color: #9d9d9d !important;
-        }
-
-        .navbar-inverse .navbar-brand:hover,
-        .navbar-inverse .navbar-brand:focus {
-            color: #fff !important;
-        }
-
-        .navbar-inverse .navbar-nav > li > a {
-            color: #9d9d9d !important;
-        }
-
-        .navbar-inverse .navbar-nav > li > a:hover,
-        .navbar-inverse .navbar-nav > li > a:focus {
-            color: #fff !important;
-        }
-
-        .navbar-inverse .navbar-nav > .active > a,
-        .navbar-inverse .navbar-nav > .active > a:hover,
-        .navbar-inverse .navbar-nav > .active > a:focus {
-            color: #fff !important;
-            background-color: #080808 !important;
-        }
-
-        .navbar-inverse .navbar-toggle {
-            border-color: #333 !important;
-        }
-
-        .navbar-inverse .navbar-toggle:hover,
-        .navbar-inverse .navbar-toggle:focus {
-            background-color: #333 !important;
-        }
-
-        .navbar-inverse .navbar-toggle .icon-bar {
-            background-color: #fff !important;
-        }
-        
-        /* Styles spécifiques uniquement pour le countdown */
-        .intro-text .flip-clock-container {
+        /* Styles uniquement pour le countdown - sans toucher à la navbar */
+        .flip-clock-container {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
             backdrop-filter: blur(10px);
             padding: 30px 25px;
@@ -118,11 +61,9 @@
             display: inline-block;
             margin: 20px auto;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
         }
 
-        /* Countdown title */
-        .intro-text .countdown-title {
+        .countdown-title {
             font-size: 1.4rem;
             font-weight: 600;
             color: #1a1a1a;
@@ -130,24 +71,21 @@
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
 
-        /* Flip clock */
-        .intro-text .flip-clock {
+        .flip-clock {
             display: flex;
             justify-content: center;
             align-items: flex-start;
             gap: 8px;
         }
 
-        /* Individual digit container */
-        .intro-text .digit-container {
+        .digit-container {
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0 5px;
         }
 
-        /* Individual digit styling */
-        .intro-text .digit {
+        .digit {
             position: relative;
             width: 16vw;
             height: 16vw;
@@ -158,8 +96,6 @@
             background: linear-gradient(145deg, #ffffff, #f0f0f0);
             color: #1a1a1a;
             font-size: 4.2vw;
-            max-font-size: 2.2rem;
-            min-font-size: 1.5rem;
             font-weight: 700;
             display: flex;
             justify-content: center;
@@ -172,12 +108,11 @@
             transition: transform 0.2s ease;
         }
 
-        .intro-text .digit:hover {
+        .digit:hover {
             transform: translateY(-2px);
         }
 
-        /* Label styling */
-        .intro-text .label {
+        .label {
             margin-top: 8px;
             padding: 6px 12px;
             background: rgba(26, 26, 26, 0.9);
@@ -193,8 +128,7 @@
             min-width: 70px;
         }
 
-        /* Separator styling (colon) */
-        .intro-text .separator {
+        .separator {
             font-size: 3.5vw;
             font-weight: 700;
             color: #1a1a1a;
@@ -208,62 +142,62 @@
 
         /* Media queries pour responsive */
         @media (max-width: 768px) {
-            .intro-text .flip-clock-container {
+            .flip-clock-container {
                 padding: 25px 20px;
                 margin: 15px 10px;
             }
             
-            .intro-text .digit {
+            .digit {
                 width: 18vw;
                 height: 18vw;
                 font-size: 4.5vw;
             }
             
-            .intro-text .separator {
+            .separator {
                 font-size: 4vw;
                 height: 18vw;
             }
             
-            .intro-text .label {
+            .label {
                 font-size: 0.75rem;
                 padding: 4px 8px;
                 min-width: 60px;
             }
             
-            .intro-text .countdown-title {
+            .countdown-title {
                 font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .intro-text .flip-clock {
+            .flip-clock {
                 gap: 4px;
             }
             
-            .intro-text .digit-container {
+            .digit-container {
                 margin: 0 2px;
             }
             
-            .intro-text .digit {
+            .digit {
                 width: 20vw;
                 height: 20vw;
                 font-size: 5vw;
                 border-radius: 12px;
             }
             
-            .intro-text .separator {
+            .separator {
                 font-size: 4.5vw;
                 height: 20vw;
             }
             
-            .intro-text .label {
+            .label {
                 font-size: 0.7rem;
                 padding: 3px 6px;
                 margin-top: 6px;
                 min-width: 50px;
             }
             
-            .intro-text .countdown-title {
+            .countdown-title {
                 font-size: 1.1rem;
                 margin-bottom: 15px;
             }
@@ -303,5 +237,5 @@
         updateCountdown();
     </script>
 
-  </body>
+    </body>
 </html>
