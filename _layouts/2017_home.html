@@ -54,8 +54,15 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Préserver tous les styles Bootstrap existants */
-        /* Ne pas toucher aux styles du body, navbar, etc. */
+        /* FIX IMPORTANT : Padding pour navbar fixed-top Bootstrap */
+        body.index {
+            padding-top: 70px; /* Ajustez selon la hauteur de votre navbar */
+        }
+        
+        /* Alternative si le padding-top ne fonctionne pas */
+        body#page-top.index {
+            padding-top: 70px !important;
+        }
         
         /* Styles spécifiques uniquement pour le countdown */
         .intro-text .flip-clock-container {
