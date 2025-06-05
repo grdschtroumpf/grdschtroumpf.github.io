@@ -11,37 +11,20 @@
                 <div class="intro-heading">
                     <strong>Interjeux de Romorantin</strong><br>
                 </div>
+                
+                <!-- Simple Countdown Text -->
+                <div class="countdown-simple">
+                    <p>Le café est servi dans :</p>
+                    <div class="countdown-text">
+                        <span id="days">00</span> jours : 
+                        <span id="hours">00</span> heures : 
+                        <span id="minutes">00</span> minutes : 
+                        <span id="seconds">00</span> secondes
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    
-    <!-- Countdown Timer - Floating independently -->
-    <div class="countdown-overlay">
-        <div class="flip-clock-container">
-            <div class="countdown-title">Le café est servi dans :</div>
-            <div class="flip-clock">
-                <div class="digit-container">
-                    <div class="digit" id="days">00</div>
-                    <div class="label">Jours</div>
-                </div>
-                <div class="separator">:</div>
-                <div class="digit-container">
-                    <div class="digit" id="hours">00</div>
-                    <div class="label">Heures</div>
-                </div>
-                <div class="separator">:</div>
-                <div class="digit-container">
-                    <div class="digit" id="minutes">00</div>
-                    <div class="label">Minutes</div>
-                </div>
-                <div class="separator">:</div>
-                <div class="digit-container">
-                    <div class="digit" id="seconds">00</div>
-                    <div class="label">Secondes</div>
-                </div>
-            </div>
-        </div>
-    </div>
     
     {% include 2017_data/intro.html %}
     {% include 2017_data/speakers.html %}
@@ -53,165 +36,56 @@
     {% include 2017_data/js.html %}
 
     <style>
-        /* Countdown flottant - indépendant de tous les containers */
-        .countdown-overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
+        /* Countdown simple et sobre */
+        .countdown-simple {
+            margin-top: 30px;
             text-align: center;
-            pointer-events: none; /* Permet de cliquer à travers si nécessaire */
         }
         
-        .flip-clock-container {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
-            backdrop-filter: blur(10px);
-            padding: 30px 25px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            pointer-events: auto; /* Le countdown lui-même peut être interactif */
+        .countdown-simple p {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
-        .countdown-title {
+        
+        .countdown-text {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
             font-size: 1.4rem;
             font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 20px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
-
-        .flip-clock {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 8px;
-        }
-
-        .digit-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 5px;
-        }
-
-        .digit {
-            position: relative;
-            width: 16vw;
-            height: 16vw;
-            max-width: 85px;
-            max-height: 85px;
-            min-width: 60px;
-            min-height: 60px;
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            color: #1a1a1a;
-            font-size: 4.2vw;
+        
+        .countdown-text span {
             font-weight: 700;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 15px;
-            box-shadow: 
-                0 4px 15px rgba(0, 0, 0, 0.15),
-                inset 0 1px 3px rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
+            color: #fff;
         }
-
-        .digit:hover {
-            transform: translateY(-2px);
-        }
-
-        .label {
-            margin-top: 8px;
-            padding: 6px 12px;
-            background: rgba(26, 26, 26, 0.9);
-            color: #ffffff;
-            text-align: center;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            min-width: 70px;
-        }
-
-        .separator {
-            font-size: 3.5vw;
-            font-weight: 700;
-            color: #1a1a1a;
-            display: flex;
-            align-items: center;
-            height: 16vw;
-            max-height: 85px;
-            min-height: 60px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Media queries pour responsive */
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .flip-clock-container {
-                padding: 25px 20px;
-                margin: 15px 10px;
-            }
-            
-            .digit {
-                width: 18vw;
-                height: 18vw;
-                font-size: 4.5vw;
-            }
-            
-            .separator {
-                font-size: 4vw;
-                height: 18vw;
-            }
-            
-            .label {
-                font-size: 0.75rem;
-                padding: 4px 8px;
-                min-width: 60px;
-            }
-            
-            .countdown-title {
+            .countdown-text {
                 font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            
+            .countdown-simple p {
+                font-size: 1.1rem;
             }
         }
-
+        
         @media (max-width: 480px) {
-            .flip-clock {
-                gap: 4px;
+            .countdown-text {
+                font-size: 1rem;
+                padding: 10px 15px;
             }
             
-            .digit-container {
-                margin: 0 2px;
-            }
-            
-            .digit {
-                width: 20vw;
-                height: 20vw;
-                font-size: 5vw;
-                border-radius: 12px;
-            }
-            
-            .separator {
-                font-size: 4.5vw;
-                height: 20vw;
-            }
-            
-            .label {
-                font-size: 0.7rem;
-                padding: 3px 6px;
-                margin-top: 6px;
-                min-width: 50px;
-            }
-            
-            .countdown-title {
-                font-size: 1.1rem;
-                margin-bottom: 15px;
+            .countdown-simple p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -230,7 +104,7 @@
                 const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-                // Update the flip clock digits
+                // Update the simple countdown text
                 document.getElementById("days").textContent = days.toString().padStart(2, "0");
                 document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
                 document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
