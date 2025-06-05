@@ -3,8 +3,7 @@
 
   {% include 2017_data/head.html %}
 
-
-    <body id="page-top" class="index">
+  <body id="page-top" class="index">
 
     {% include 2017_data/header-home.html %}
 
@@ -13,10 +12,8 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-heading"><strong>Interjeux de Romorantin</strong><br></div>
-           <!-- <div class="intro-lead-in">samedi 11 et dimanche 12 octobre 2025</div>
-                <div class="intro-lead-in">Salle Fabrique Normant, 2 Av. François Mitterrand</div>
-                <div class="intro-lead-in">41200 Romorantin-Lanthenay</div>
-                <a href="#intro" class="page-scroll btn btn-xl">Plus d'infos</a>   -->
+                <!-- Countdown Timer -->
+                <div id="countdown" style="font-size: 1.5rem; font-weight: bold; margin-top: 20px; color: #333;"></div>
             </div>
         </div>
     </header>
@@ -30,5 +27,30 @@
     {% include 2017_data/speakers_info.html %}
     {% include 2017_data/js.html %}
 
-    </body>
+    <!-- Countdown Script -->
+    <script>
+        // Set the event date (Year, Month - 1 (0-indexed), Day, Hour, Minute, Second)
+        const eventDate = new Date(2025, 9, 11, 7, 30, 0); // samedi October 11, 2025 7h30
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = eventDate - now;
+
+            if (timeDifference > 0) {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                document.getElementById("countdown").innerHTML = 
+                    `L'événement commence dans ${days} jours et ${hours} heures.`;
+            } else {
+                document.getElementById("countdown").innerHTML = "L'événement a commencé ou est terminé !";
+            }
+        }
+
+        // Update the countdown every hour
+        setInterval(updateCountdown, 3600000); // Update every 1 hour (3600000 ms)
+        updateCountdown(); // Initial call to display the countdown immediately
+    </script>
+
+  </body>
 </html>
