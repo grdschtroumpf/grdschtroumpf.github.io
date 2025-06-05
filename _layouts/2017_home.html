@@ -16,15 +16,28 @@
                     <strong>Interjeux de Romorantin</strong><br>
                 </div>
                 <!-- Countdown Timer -->
-                <div class="flip-clock">
-                    <div class="digit-container">
-                        <div class="digit" id="days">00</div>
-                        <div class="label">Jours</div>
-                    </div>
-                    <div class="separator">:</div>
-                    <div class="digit-container">
-                        <div class="digit" id="hours">00</div>
-                        <div class="label">Heures</div>
+                <div class="flip-clock-container">
+                    <div class="countdown-title">Le café est servi dans :</div>
+                    <div class="flip-clock">
+                        <div class="digit-container">
+                            <div class="digit" id="days">00</div>
+                            <div class="label">Jours</div>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="digit-container">
+                            <div class="digit" id="hours">00</div>
+                            <div class="label">Heures</div>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="digit-container">
+                            <div class="digit" id="minutes">00</div>
+                            <div class="label">Minutes</div>
+                        </div>
+                        <div class="separator">:</div>
+                        <div class="digit-container">
+                            <div class="digit" id="seconds">00</div>
+                            <div class="label">Secondes</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,11 +69,27 @@
         }
 
         /* Flip clock container */
+        .flip-clock-container {
+            background-color: #ffffff; /* White background for the entire countdown */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            display: inline-block;
+        }
+
+        /* Countdown title */
+        .countdown-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2f2f2f; /* Smoky black / anthracite gray */
+            margin-bottom: 10px;
+        }
+
+        /* Flip clock */
         .flip-clock {
             display: flex;
             justify-content: center;
             gap: 5%;
-            margin-top: 20px;
         }
 
         /* Individual digit container */
@@ -73,10 +102,10 @@
         /* Individual digit styling */
         .digit {
             position: relative;
-            width: 20vw; /* Responsive width: 20% of the viewport width */
-            height: 30vw; /* Responsive height: 30% of the viewport width */
+            width: 15vw; /* Responsive width: 15% of the viewport width */
+            height: 20vw; /* Responsive height: 20% of the viewport width */
             max-width: 80px; /* Maximum size for larger screens */
-            max-height: 120px; /* Maximum size for larger screens */
+            max-height: 100px; /* Maximum size for larger screens */
             background-color: #ffffff; /* White background */
             color: #2f2f2f; /* Smoky black / anthracite gray for text */
             font-size: 4vw; /* Responsive font size */
@@ -90,10 +119,15 @@
 
         /* Label styling */
         .label {
-            margin-top: 5px;
-            font-size: 1.2rem;
+            width: 100%; /* Match the width of the digit */
+            background-color: #ffffff; /* White background */
+            text-align: center;
+            margin-top: -5px; /* Slight overlap with the digit */
+            font-size: 1rem;
             font-weight: bold;
             color: #2f2f2f; /* Smoky black / anthracite gray */
+            border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
         }
 
         /* Separator styling (colon) */
@@ -108,24 +142,28 @@
         /* Media query for smaller screens */
         @media (max-width: 600px) {
             .digit {
-                width: 25vw; /* Slightly larger digits for small screens */
-                height: 35vw;
+                width: 20vw; /* Slightly larger digits for small screens */
+                height: 25vw;
                 font-size: 5vw; /* Adjust font size */
+            }
+
+            .label {
+                font-size: 0.9rem; /* Adjust label size */
             }
 
             .separator {
                 font-size: 5vw; /* Adjust separator size */
             }
 
-            .label {
-                font-size: 1rem; /* Adjust label size */
+            .countdown-title {
+                font-size: 1rem; /* Adjust title size */
             }
         }
     </style>
 
     <script>
         // Set the event date (Year, Month - 1 (0-indexed), Day, Hour, Minute, Second)
-        const eventDate = new Date(2025, 9, 11, 7, 0, 0); // October 11, 2025
+        const eventDate = new Date(2025, 9, 11, 8, 0, 0); // October 11, 2025
 
         function updateCountdown() {
             const now = new Date();
@@ -134,19 +172,25 @@
             if (timeDifference > 0) {
                 const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
                 // Update the flip clock digits
                 document.getElementById("days").textContent = days.toString().padStart(2, "0");
                 document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
             } else {
                 // If the event has started or ended
                 document.getElementById("days").textContent = "00";
                 document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
             }
         }
 
-        // Update the countdown every hour
-        setInterval(updateCountdown, 3600000); // Update every 1 hour (3600000 ms)
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000); // Update every second
         updateCountdown(); // Initial call to display the countdown immediately
     </script>
 
