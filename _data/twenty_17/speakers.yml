@@ -1,6 +1,6 @@
 - title: Interregion T9A
   name: 9ème Age
-  subtitle: 350 places - Tournoi par équipe de 6 en 5 rondes
+  subtitle: Par équipe régionale de 6 
   img: 9age.jpg
   thumbnail: t9a.png
   alt: Picture of TBD
@@ -12,7 +12,7 @@
 
 - title: 1er rassemblement inter-régions
   name: The Old World
-  subtitle: 100 places - volonté d'accueillir différents types de joueurs
+  subtitle: Volonté d'accueillir différents types de joueurs 
   img: tow.jpg
   thumbnail: tow.jpg
   alt: Picture of TBD
@@ -22,7 +22,7 @@
   #pdf_file: "regles-jeu1.pdf"
   pdf_name: "Bientôt disponible"
 
-- title: description
+- title: en cours de chargement
   name: Middle earth
   subtitle: sous titre
   img: mesbg.jpg
@@ -34,9 +34,9 @@
   #pdf_file: "regles-jeu1.pdf"
   pdf_name: "Bientôt disponible"
 
-- title: description
+- title: Opération Ariane
   name: Infinity
-  subtitle: sous titre
+  subtitle: Tournoi solo ITS 
   img: infinity.png
   thumbnail: infinity.png
   alt: Picture of TBD
