@@ -1,6 +1,6 @@
 - title: Interregion T9A
   name: 9ème Age
-  subtitle: Tournoi par équipe de 6 en 5 rondes.
+  subtitle: Tournoi par équipe de 6 en 5 rondes
   img: 9age.jpg
   thumbnail: t9a.png
   alt: Picture of TBD
@@ -12,12 +12,12 @@
 
 - title: description
   name: The Old World
-  subtitle: sous titre
+  subtitle: 1er rassemblement inter-régions
   img: tow.jpg
   thumbnail: tow.jpg
   alt: Picture of TBD
   topic: 
-  description: 
+  description: 100 places avec volonté d'accueillir différents types de joueurs
   website : TBD
   #pdf_file: "regles-jeu1.pdf"
   pdf_name: "Bientôt disponible"
