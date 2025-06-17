@@ -10,14 +10,14 @@
   pdf_file: "INTER REGIONS 2024 - REGLEMENT V4.docx.pdf"
   pdf_name: "Règlement 2024"
 
-- title: description
+- title: 1er rassemblement inter-régions
   name: The Old World
-  subtitle: 1er rassemblement inter-régions
+  subtitle: 100 places (volonté d'accueillir différents types de joueurs)
   img: tow.jpg
   thumbnail: tow.jpg
   alt: Picture of TBD
   topic: 
-  description: 100 places (volonté d'accueillir différents types de joueurs)
+  description:
   website : TBD
   #pdf_file: "regles-jeu1.pdf"
   pdf_name: "Bientôt disponible"
