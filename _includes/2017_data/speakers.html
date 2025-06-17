@@ -90,7 +90,7 @@
 /* Ajustement pour les speakers-item */
 .speakers-item {
     margin-bottom: 30px;
-    height: 400px; /* Hauteur automatique maintenant */
+    height: auto; /* Hauteur automatique maintenant */
     display: flex;
     flex-direction: column;
 }
@@ -98,6 +98,8 @@
 .speakers-item .speakers-image {
     flex-shrink: 0;
     background-color: white;
+    margin-left: 15px;
+    margin-right: 15px;
     padding: 15px;
 }
 
@@ -112,11 +114,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Alignement en haut */
-    padding: 15px;
     background-color: white;
     margin-top: 0px;
-    margin-left: 15px; /* Même marge que l'image */
-    margin-right: 15px; /* Même marge que l'image */
+    margin-left: 15px; /* Alignement avec l'image */
+    margin-right: 15px; /* Alignement avec l'image */
+    padding: 15px; /* Padding interne identique à l'image */
     min-height: 120px; /* Hauteur minimale fixe pour uniformiser */
 }
 
