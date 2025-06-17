@@ -18,23 +18,23 @@
                         <h4>{{ post.title }}</h4>
                         <p class="text-muted">{{ post.subtitle }}</p>
                     </div>
-                    
-                    <div class="content-bottom">
-                        <!-- Bouton de téléchargement PDF -->
-                        {% if post.pdf_file %}
-                        <a href="{{ '/assets/documents/' | append: post.pdf_file | relative_url }}" 
-                           class="btn btn-download" 
-                           target="_blank"
-                           title="Télécharger {{ post.pdf_name | default: 'le document' }}">
-                            <i class="fa fa-download"></i> {{ post.pdf_name | default: "Télécharger" }}
-                        </a>
-                        {% else %}
-                        <span class="btn btn-download btn-disabled" 
-                              title="Document non disponible">
-                            <i class="fa fa-download"></i> {{ post.pdf_name | default: "Non disponible" }}
-                        </span>
-                        {% endif %}
-                    </div>
+                </div>
+                
+                <!-- Bouton de téléchargement PDF maintenant à l'extérieur -->
+                <div class="download-section">
+                    {% if post.pdf_file %}
+                    <a href="{{ '/assets/documents/' | append: post.pdf_file | relative_url }}" 
+                       class="btn btn-download" 
+                       target="_blank"
+                       title="Télécharger {{ post.pdf_name | default: 'le document' }}">
+                        <i class="fa fa-download"></i> {{ post.pdf_name | default: "Télécharger" }}
+                    </a>
+                    {% else %}
+                    <span class="btn btn-download btn-disabled" 
+                          title="Document non disponible">
+                        <i class="fa fa-download"></i> {{ post.pdf_name | default: "Non disponible" }}
+                    </span>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
@@ -90,41 +90,41 @@
 /* Ajustement pour les speakers-item */
 .speakers-item {
     margin-bottom: 30px;
-    height: 400px; /* Hauteur fixe pour tous les containers */
+    height: auto; /* Hauteur automatique maintenant */
     display: flex;
     flex-direction: column;
 }
 
 .speakers-item .speakers-image {
-    flex-shrink: 0; /* L'image ne rétrécit pas */
-    background-color: white; /* Fond blanc pour l'image */
-    padding: 15px; /* Espacement autour de l'image */
-  /*  border-radius: 8px;  Coins arrondis optionnels */
+    flex-shrink: 0;
+    background-color: white;
+    padding: 15px;
 }
 
 .speakers-item img {
-    height: 170px; /* Hauteur réduite pour compenser le padding */
+    height: 170px;
     width: 100%;
-    object-fit: contain; /* Garde les proportions sans couper */
+    object-fit: contain;
 }
 
 .speakers-caption {
-    flex: 1; /* Prend l'espace restant */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 15px 0 20px 0;
-    background-color: white; /* Fond blanc pour le texte */
-    margin-top: 0px; /* Espace entre image et texte */
-   /*border-radius: 8px;  Coins arrondis optionnels */
-    padding: 15px; /* Espacement intérieur */
+    justify-content: flex-start; /* Alignement en haut */
+    padding: 15px;
+    background-color: white;
+    margin-top: 0px;
 }
 
 .speakers-caption .content-top {
     flex-grow: 1;
 }
 
-.speakers-caption .content-bottom {
-    margin-top: auto;
+/* Nouvelle section pour les boutons de téléchargement */
+.download-section {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 10px;
 }
 </style>
