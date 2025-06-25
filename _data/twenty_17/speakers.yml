@@ -8,7 +8,7 @@
   description: 
   website : TBD
   #pdf_file: "INTER REGIONS 2024 - REGLEMENT V4.docx.pdf"
-  pdf_name: "Bientôt disponible"
+  unavailable_text: "Bientôt disponible"
 
 - title: 1er rassemblement inter-régions
   name: The Old World
@@ -20,7 +20,7 @@
   description:
   website : TBD
   #pdf_file: "regles-jeu1.pdf"
-  pdf_name: "Bientôt disponible"
+  unavailable_text: "Bientôt disponible"
 
 - title: en cours de chargement
   name: Middle earth
@@ -32,7 +32,7 @@
   description: 
   website : TBD
   #pdf_file: "regles-jeu1.pdf"
-  pdf_name: "Bientôt disponible"
+  unavailable_text: "Bientôt disponible"
 
 - title: Opération Ariane
   name: Infinity
@@ -43,5 +43,6 @@
   topic: 
   description: 
   website : TBD
-  #pdf_file: "regles-jeu1.pdf"
-  pdf_name: "Bientôt disponible"
+  hyperlink: "https://docs.google.com/document/d/19wfI7Rd7A-cmE5jq7I5G_zW6bMOAhGH5x4UnUIOSA8I/edit?usp=sharing"
+  link_name: "Réglement"
+  link_title: "Réglement"
