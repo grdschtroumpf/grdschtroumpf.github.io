@@ -19,8 +19,9 @@
   topic: 
   description:
   website : TBD
-  #pdf_file: "regles-jeu1.pdf"
-  unavailable_text: "Bientôt disponible"
+  hyperlink: "https://www.warhammer-forum.com/topic/297912-1er-rassemblement-inter-regions-tow-11121025-à-romorantin-41/"
+  link_name: "Règlement"
+  link_title: "Règlement"
 
 - title: en cours de chargement
   name: Middle earth
