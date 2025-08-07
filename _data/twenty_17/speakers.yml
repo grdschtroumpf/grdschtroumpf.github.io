@@ -23,17 +23,6 @@
   link_name: "Règlement"
   link_title: "Règlement"
 
-- title: TBD
-  name: Middle earth
-  subtitle: 
-  img: mesbg.jpg
-  thumbnail: mesbg.jpg
-  alt: Picture of TBD
-  topic: 
-  description: 
-  website : TBD
-  #pdf_file: "regles-jeu1.pdf"
-  unavailable_text: "Bientôt disponible"
 
 - title: Opération Ariane
   name: Infinity
