@@ -10,21 +10,21 @@
   pdf_file: "INTER REGIONS 2025 - REGLEMENT V2.docx.pdf"
   pdf_name: "Règlement"
 
-- title: 1er rassemblement inter-régions
-  name: The Old World
-  subtitle: Volonté d'accueillir différents types de joueurs 
-  img: tow.jpg
-  thumbnail: tow.jpg
-  alt: Picture of TBD
-  topic: 
-  description:
-  website : TBD
-  hyperlink: "https://linktr.ee/intertow2025"
-  link_name: "Infos"
-  link_title: "Infos"
+#- title: 1er rassemblement inter-régions
+# name: The Old World
+# subtitle: Volonté d'accueillir différents types de joueurs 
+#  img: tow.jpg
+#  thumbnail: tow.jpg
+#  alt: Picture of TBD
+#  topic: 
+#  description:
+#  website : TBD
+#  hyperlink: "https://linktr.ee/intertow2025"
+#  link_name: "Infos"
+# link_title: "Infos"
 
 
-- title: Opération Drandulet
+- title: Opération Drandulet 2
   name: Infinity
   subtitle:     Tournoi solo ITS 17      
   img: infinity.png
