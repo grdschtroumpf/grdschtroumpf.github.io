@@ -26,7 +26,7 @@
 
 - title: Infinity
   name: tournoi
-  subtitle:     Tournoi solo-équipe ITS 17      
+  subtitle: Tournoi solo-équipe ITS 17      
   img: infinity.png
   thumbnail: infinity.png
   alt: Picture of TBD
@@ -39,7 +39,7 @@
 
 - title: MESBG
   name: tournoi
-  subtitle:     TBD    
+  subtitle: Tournoi par équipe régionale de 6   
   img: mesbg.jpg
   thumbnail: mesbg.jpg
   alt: Picture of TBD
@@ -52,9 +52,9 @@
   
 - title: Warcrow
   name: tournoi
-  subtitle:     TBD    
-  img: Wacrow-logo.png
-  thumbnail: Wacrow-logo.png
+  subtitle: Tournoi solo   
+  img: Warcrow-logo.png
+  thumbnail: Warcrow-logo.png
   alt: Picture of TBD
   topic: 
   description: 
