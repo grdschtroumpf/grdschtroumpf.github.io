@@ -1,5 +1,5 @@
 - title: Interregion T9A
-  name: 9ème Age
+  name: tournoi
   subtitle: Tournoi par équipe régionale de 6 
   img: 9age.jpg
   thumbnail: t9a.png
@@ -24,9 +24,9 @@
 # link_title: "Infos"
 
 
-- title: Opération Drandulet 2
-  name: Infinity
-  subtitle:     Tournoi solo ITS 17      
+- title: Infinity
+  name: tournoi
+  subtitle:     Tournoi solo-équipe ITS 17      
   img: infinity.png
   thumbnail: infinity.png
   alt: Picture of TBD
@@ -38,7 +38,7 @@
   link_title: "Règlement"
 
 - title: MESBG
-  name: Infinity
+  name: tournoi
   subtitle:     TBD    
   img: mesbg.jpg
   thumbnail: mesbg.jpg
@@ -49,7 +49,20 @@
   hyperlink: 
   link_name: "Règlement"
   link_title: "Règlement"
-
+  
+- title: Warcrow
+  name: tournoi
+  subtitle:     TBD    
+  img: Wacrow-logo.png
+  thumbnail: Wacrow-logo.png
+  alt: Picture of TBD
+  topic: 
+  description: 
+  website : TBD
+  hyperlink: 
+  link_name: "Règlement"
+  link_title: "Règlement"
+  
 - title: Flaming Sword
   name: peinture
   subtitle: Open de peinture    
