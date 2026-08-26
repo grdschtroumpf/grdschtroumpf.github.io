@@ -26,7 +26,7 @@
 
 - title: Infinity
   name: tournoi
-  subtitle: Tournoi solo ITS 17      
+  subtitle: Tournoi solo ITS 18      
   img: infinity.png
   thumbnail: infinity.png
   alt: Picture of TBD
@@ -37,19 +37,6 @@
   link_name: "Règlement"
   link_title: "Règlement"
 
-- title: MESBG
-  name: tournoi
-  subtitle: Tournoi par équipe régionale de 4   
-  img: mesbg.jpg
-  thumbnail: mesbg.jpg
-  alt: Picture of TBD
-  topic: 
-  description: 
-  website : TBD
-  hyperlink: 
-  link_name: "Règlement"
-  link_title: "Règlement"
-  
 - title: Warcrow
   name: tournoi
   subtitle: Tournoi solo   
@@ -64,8 +51,8 @@
   link_title: "Règlement"
   
 - title: Age of Sigmar
-  name: Tournoi par équipe de 6 
-  subtitle: Tournoi par équipe de 6  
+  name: Tournoi solo
+  subtitle: Tournoi solo
   img: aos-logo.png
   thumbnail: aos-logo.png
   alt: Picture of TBD
